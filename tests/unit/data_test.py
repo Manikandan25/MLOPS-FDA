@@ -14,46 +14,46 @@ def get_absPath(filename):
     return path
 
 # number of features
-expected_columns = 10
+expected_columns = 18
 
 # distribution of features in the training set
-historical_mean = np.array(
-    [
-        -3.63962254e-16,
-        1.26972339e-16,
-        -8.01646331e-16,
-        1.28856202e-16,
-        -8.99230414e-17,
-        1.29609747e-16,
-        -4.56397112e-16,
-        3.87573332e-16,
-        -3.84559152e-16,
-        -3.39848813e-16,
-        1.52133484e02,
-    ]
-)
-historical_std = np.array(
-    [
-        4.75651494e-02,
-        4.75651494e-02,
-        4.75651494e-02,
-        4.75651494e-02,
-        4.75651494e-02,
-        4.75651494e-02,
-        4.75651494e-02,
-        4.75651494e-02,
-        4.75651494e-02,
-        4.75651494e-02,
-        7.70057459e01,
-    ]
-)
+# historical_mean = np.array(
+#     [
+#         -3.63962254e-16,
+#         1.26972339e-16,
+#         -8.01646331e-16,
+#         1.28856202e-16,
+#         -8.99230414e-17,
+#         1.29609747e-16,
+#         -4.56397112e-16,
+#         3.87573332e-16,
+#         -3.84559152e-16,
+#         -3.39848813e-16,
+#         1.52133484e02,
+#     ]
+# )
+# historical_std = np.array(
+#     [
+#         4.75651494e-02,
+#         4.75651494e-02,
+#         4.75651494e-02,
+#         4.75651494e-02,
+#         4.75651494e-02,
+#         4.75651494e-02,
+#         4.75651494e-02,
+#         4.75651494e-02,
+#         4.75651494e-02,
+#         4.75651494e-02,
+#         7.70057459e01,
+#     ]
+# )
 
-# maximal relative change in feature mean or standrd deviation
+# maximal relative change in feature mean or standard deviation
 # that we can tolerate
 shift_tolerance = 3
 
 def test_check_schema():
-    datafile = get_absPath("diabetes.csv")
+    datafile = get_absPath("seafood_imports.csv")
     # check that file exists
     assert os.path.exists(datafile)
     dataset = pd.read_csv(datafile)
@@ -64,7 +64,7 @@ def test_check_schema():
 
 
 def test_check_bad_schema():
-    datafile = get_absPath("diabetes_bad_schema.csv")
+    datafile = get_absPath("seafood_imports_bad_schema.csv")
     # check that file exists
     assert os.path.exists(datafile)
     dataset = pd.read_csv(datafile)
@@ -75,7 +75,7 @@ def test_check_bad_schema():
 
 
 def test_check_missing_values():
-    datafile = get_absPath("diabetes_missing_values.csv")
+    datafile = get_absPath("seafood_imports_missing_values.csv")
     # check that file exists
     assert os.path.exists(datafile)
     dataset = pd.read_csv(datafile)
@@ -83,14 +83,14 @@ def test_check_missing_values():
     assert n_nan > 0
 
 
-def test_check_distribution():
-    datafile = get_absPath("diabetes_bad_dist.csv")
-    # check that file exists
-    assert os.path.exists(datafile)
-    dataset = pd.read_csv(datafile)
-    mean = np.mean(dataset.values, axis=0)
-    std = np.mean(dataset.values, axis=0)
-    assert (
-        np.sum(abs(mean - historical_mean) > shift_tolerance * abs(historical_mean))
-        or np.sum(abs(std - historical_std) > shift_tolerance * abs(historical_std)) > 0
-    )
+# def test_check_distribution():
+#     datafile = get_absPath("fda_bad_dist.csv")
+#     # check that file exists
+#     assert os.path.exists(datafile)
+#     dataset = pd.read_csv(datafile)
+#     mean = np.mean(dataset.values, axis=0)
+#     std = np.mean(dataset.values, axis=0)
+#     assert (
+#         np.sum(abs(mean - historical_mean) > shift_tolerance * abs(historical_mean))
+#         or np.sum(abs(std - historical_std) > shift_tolerance * abs(historical_std)) > 0
+#           )

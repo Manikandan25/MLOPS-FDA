@@ -1,0 +1,3 @@
+PortOfEntryDistrict,CountryOfOrigin,ProductCode,DateDiff,Status,Product,SubIndustry,UseCase,ProductState,Source,SeafoodCategory,OriginCity,OriginContinent,SecondaryProcessingOriginCity,ProductType,VesselCheck,StorageCondition,IsSafe
+Division of Southeast Imports,Japan,16MGD09,1,Passed,OCTOPUS,Other Aquatic Species,"Plastic, Synth","Raw, Fresh, Frozen, Natural State",WildCatch,Other Fish,Incheon,Asia,Ojima,Processed,YES,Contract Sterilizer,No
+Division of West Coast Imports,Japan,16AGT79,190,Released,YELLOWTAIL,Fish,"Plastic, Synth",Packaged Food (Not Commercially Sterile),WildCatch,Other Fish,Incheon,Asia,Kagoshima,Processed,YES,Acidified,No

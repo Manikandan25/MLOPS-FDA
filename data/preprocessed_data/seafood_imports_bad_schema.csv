@@ -1,0 +1,3 @@
+Product,SubIndustry,UseCase,ProductState,Source,SeafoodCategory,OriginCity,OriginContinent,SecondaryProcessingOriginCity,ProductType,VesselCheck,StorageCondition,IsSafe
+OCTOPUS,Other Aquatic Species,"Plastic, Synth","Raw, Fresh, Frozen, Natural State",WildCatch,Other Fish,Incheon,Asia,Ojima,Processed,YES,Contract Sterilizer,No
+YELLOWTAIL,Fish,"Plastic, Synth",Packaged Food (Not Commercially Sterile),WildCatch,Other Fish,Incheon,Asia,Kagoshima,Processed,YES,Acidified,No
